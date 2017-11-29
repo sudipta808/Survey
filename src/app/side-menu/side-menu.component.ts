@@ -13,7 +13,6 @@ export class SideMenuComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    debugger;
     this.router.navigateByUrl('home/dashboard');
   }
 
