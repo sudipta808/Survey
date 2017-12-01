@@ -14,7 +14,7 @@ const forgotPasswordRoute: Route = {
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'login/signin',
     pathMatch: 'full'
   },
   ...loginRoutes,
