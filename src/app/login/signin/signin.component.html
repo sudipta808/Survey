@@ -1,0 +1,41 @@
+<div class="card rounded-0">
+        <div class="card-body">
+            <form class="form" role="form" autocomplete="off" id="formLogin" [formGroup]="loginForm" (ngSubmit)="loginButtonAction()">
+                <div class="form-group">
+                    <label for="uname1">Username</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="loginForm.controls.userName.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!loginForm.controls.userName.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="loginForm.controls.userName.valid"></i>
+                        </div>
+                        <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="" [(ngModel)]="userCredentials.userName"
+                            formControlName="userName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="loginForm.controls.password.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!loginForm.controls.password.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="loginForm.controls.password.valid"></i>
+                        </div>
+                        <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password" [(ngModel)]="userCredentials.userPassword"
+                            formControlName="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" [(ngModel)]="userCredentials.isRemember" formControlName="isRemember">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description small">Remember me</span>
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="small" (click)="forgotPassword()">Forgot Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg float-right">Login</button>
+            </form>
+        </div>
+    </div>

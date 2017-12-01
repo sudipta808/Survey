@@ -4,11 +4,7 @@ import { LoginComponent } from 'app/login/login.component';
 import { ForgotPasswordComponent } from 'app/forgot-password/forgot-password.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { dashboardRoutes } from 'app/app-routing/dashboard-routing';
-
-const indexRoute: Route = {
-  path: 'login', 
-  component: LoginComponent 
-};
+import { loginRoutes } from 'app/app-routing/login-routing';
 
 const forgotPasswordRoute: Route = {
   path: 'forgotPassword',
@@ -21,14 +17,19 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  indexRoute,
+  ...loginRoutes,
   forgotPasswordRoute,
   ...dashboardRoutes
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forRoot(routes, 
+      { 
+        useHash: true,
+        enableTracing: true 
+      },
+    )
   ],
   exports: [
     RouterModule
