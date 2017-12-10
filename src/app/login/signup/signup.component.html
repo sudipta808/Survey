@@ -1,5 +1,70 @@
 <div class="card rounded-0">
     <div class="card-body">
-        <p>Signup form goes here</p>
+        <form class="form" role="form" autocomplete="off" id="signupForm" [formGroup]="signupForm" (ngSubmit)="createAccount()">
+            <div class="profile-image">
+                <div class="row">
+                    <div class="col-4 mx-auto">
+                        <img class="img-fluid mx-auto d-block" src="https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png" class="rounded-circle" />
+                    </div>
+                </div>
+            </div>
+            <div class="signup-form">
+                <div class="form-group">
+                    <label for="dpname">Display Name</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="signupForm.controls.displayName.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!signupForm.controls.displayName.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="signupForm.controls.displayName.valid"></i>
+                        </div>
+                        <input type="text" class="form-control form-control-lg rounded-0" name="dpname" id="dpname" required="" [(ngModel)]="userDetails.userName" formControlName="displayName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="signupForm.controls.email.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!signupForm.controls.email.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="signupForm.controls.email.valid"></i>
+                        </div>
+                        <input type="text" class="form-control form-control-lg rounded-0" name="email" id="email" required="" [(ngModel)]="userDetails.userEmail" formControlName="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phnumber">Phone Number</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="signupForm.controls.phoneNumber.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!signupForm.controls.phoneNumber.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="signupForm.controls.phoneNumber.valid"></i>
+                        </div>
+                        <input type="text" class="form-control form-control-lg rounded-0" name="phnumber" id="phnumber" required="" [(ngModel)]="userDetails.userPhoneNumber" formControlName="phoneNumber">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd1">Password</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="signupForm.controls.password.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!signupForm.controls.password.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="signupForm.controls.password.valid"></i>
+                        </div>
+                        <input type="password" class="form-control form-control-lg rounded-0" name="pwd1" id="pwd1" required="" [(ngModel)]="userDetails.userPassword" formControlName="password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd2">Confirm Password</label>
+                    <div class="inner-icon right-align">
+                        <div *ngIf="signupForm.controls.confirmPassword.dirty">
+                            <i class="fa fa-times custom-icon-position error-input" aria-hidden="true" *ngIf="!signupForm.controls.confirmPassword.valid"></i>
+                            <i class="fa fa-check custom-icon-position correct-input" aria-hidden="true" *ngIf="signupForm.controls.confirmPassword.valid"></i>
+                        </div>
+                        <input type="password" class="form-control form-control-lg rounded-0" name="pwd2" id="pwd2" required="" [(ngModel)]="userDetails.userConfirmPassword" formControlName="confirmPassword">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg float-right">Create Account</button>
+        </form>
     </div>
 </div>

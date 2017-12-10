@@ -2,4 +2,39 @@ signup {
     .card {
         border-top: none;
     }
+
+    .container {
+        margin-bottom: 5em;
+    }
+
+    .profile-image {
+        img {
+            //border: 1px solid;
+            width: 70px;
+            height: 70px;
+            border-color: gray;
+            background: lightgrey;
+        }
+    }
+
+    .signup-form {
+        .inner-icon {
+            position: relative;
+        }
+        .inner-icon .custom-icon-position {
+            position: absolute;
+            padding: 15px 13px;
+            pointer-events: none;
+          }
+        .right-align .custom-icon-position { right: 0px;}
+        .left-align .custom-icon-position  { left:  0px;}
+    
+        .error-input {
+            color: red;
+        }
+    
+        .correct-input {
+            color: green;
+        }
+    }
 }

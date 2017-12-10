@@ -14,5 +14,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.router.navigate(['signin'], {relativeTo: this.route, skipLocationChange: true});
+
+    
   }
 }

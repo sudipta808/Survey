@@ -38,6 +38,7 @@ app-side-menu {
     #content {
         padding: 20px;
         min-height: 100vh;
+        width: 100rem;
         transition: all 0.3s;
     }
 
@@ -136,7 +137,22 @@ app-side-menu {
     /*
     *   Details screen style
     */
-    .container {
-        padding: 1em;
+
+    .side-menu-container {
+        img {
+            border: 1px solid;
+            width: 4em;
+            border-color: gray;
+            padding: 5px;
+            background: lightgrey;
+        }
+        .position {
+            margin-top: -2em;
+            margin-right: 0em;
+        }
+    }
+
+    .router-content {
+        margin: 3em;
     }
 }
