@@ -15,7 +15,9 @@ export const EnvironmentConstant = {
         HTTP_INTERNAL_ERROR: "500 - internal server error",
         //HOST: "http://witty-instance.7e14.starter-us-west-2.openshiftapps.com/api",
         //HOST: "https://witty-sudipta808.c9users.io/api",
-        HOST: "http://127.0.0.1:8080/api",
+        //HOST: "http://127.0.0.1:8080/api",
+        HOST: "assets/STUB/",
+        LOGIN: "login.json",
         CATEGORY: "/category",
         GET_DATA: "/getData"
     },

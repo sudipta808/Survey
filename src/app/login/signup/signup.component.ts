@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ValidationService } from "app/common/validation-service/validation.service";
 import { PatternService } from "app/common/validation-service/pattern.service";
@@ -12,6 +12,7 @@ import { PatternService } from "app/common/validation-service/pattern.service";
 export class SignupComponent {
 
     signupForm: FormGroup;
+    @ViewChild('profileImage') fileInput;
 
     private userDetails: any = {
         userName: "",
@@ -31,6 +32,24 @@ export class SignupComponent {
             confirmPassword: [{value: ""}, Validators.compose([Validators.required, Validators.minLength(6)])],
             profilePic: []
         });
+    }
+
+    changeProfileImage(): void {
+        document.getElementById("fileUpload").click();
+    }
+
+    uploadProfilePic(): void {
+        debugger;
+        
+        let fileBrowser = this.fileInput.nativeElement;
+        if (fileBrowser.files && fileBrowser.files[0]) {
+            const formData = new FormData();
+            formData.append("image", fileBrowser.files[0]);
+            console.log("Image: ", formData);
+            // this.projectService.upload(formData, this.project.id).subscribe(res => {
+            //     // do stuff w/my uploaded file
+            // });
+        }
     }
 
     createAccount() {

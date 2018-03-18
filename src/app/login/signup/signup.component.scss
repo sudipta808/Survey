@@ -8,13 +8,41 @@ signup {
     }
 
     .profile-image {
+        position: relative;
         img {
-            //border: 1px solid;
             width: 70px;
             height: 70px;
             border-color: gray;
             background: lightgrey;
         }
+
+        .overlay {
+            position: absolute;
+            border-radius: 50%;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            width: 76px;
+            height:76px;
+            transition: .5s ease;
+        }
+
+        .text {
+            overflow: hidden;
+            font-size: initial;
+            margin-top: 27px;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    .profile-image:hover .overlay {
+        bottom: 0;
+        display: block;
+        background-color: gray;
+        transform: scale(1);
+        opacity: 1;
     }
 
     .signup-form {

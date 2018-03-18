@@ -3,8 +3,12 @@
         <form class="form" role="form" autocomplete="off" id="signupForm" [formGroup]="signupForm" (ngSubmit)="createAccount()">
             <div class="profile-image">
                 <div class="row">
-                    <div class="col-4 mx-auto">
+                    <div class="col-4 mx-auto" style="padding-left: 10%;">
                         <img class="img-fluid mx-auto d-block" src="https://www.sonypark360.net/wp-content/uploads/2017/08/profile-pictures.png" class="rounded-circle" />
+                    </div>
+                    <div class="mx-auto overlay" (click)="changeProfileImage()">
+                        <input id="fileUpload" type="file" #profileImage (change)="uploadProfilePic()" style="display: none; visibility: hidden;"/>
+                        <div class="text">Change</div>
                     </div>
                 </div>
             </div>

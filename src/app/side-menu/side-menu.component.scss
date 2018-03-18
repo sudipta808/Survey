@@ -141,18 +141,20 @@ app-side-menu {
     .side-menu-container {
         img {
             border: 1px solid;
-            width: 4em;
+            width: 3em;
             border-color: gray;
             padding: 5px;
             background: lightgrey;
         }
         .position {
-            margin-top: -2em;
+            margin-top: -2.5em;
             margin-right: 0em;
         }
     }
 
     .router-content {
-        margin: 3em;
+        position: relative;
+        margin-left: 0em;
+        margin-top: 1em;
     }
 }

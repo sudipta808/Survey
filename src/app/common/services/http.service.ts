@@ -154,10 +154,10 @@ export class HTTPService extends Http {
         this._url += Object.keys(this._params).length ? ("?" + this.formatData(this._params)) : "";
     }
 
-    return super.get(this._url)
-                .map(resp => {
-                  return this.filterResponseData(resp);
-                });
+    return super.get(this._url);
+                // .map(resp => {
+                //   return this.filterResponseData(resp);
+                // });
   }
 
   public doPOSTCall(apiName: string, body?: any): Observable<Response> {
@@ -167,9 +167,9 @@ export class HTTPService extends Http {
     else
       this._url = this.getUrl(apiName) + EnvironmentConstant[Settings.SERVER.DEFAULT_ENVIRONMENT][apiName];
 
-    return super.post(this._url, body)
-                .map(resp => {
-                  return this.filterResponseData(resp);
-                });
+    return super.post(this._url, body);
+                // .map(resp => {
+                //   return this.filterResponseData(resp);
+                // });
   }
 }

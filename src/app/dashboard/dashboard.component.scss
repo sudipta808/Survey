@@ -1,0 +1,10 @@
+app-dashboard {
+    div.formrow { width: 350px; }
+    div.formrow label { float: left; width: 75%; text-align: right; }
+    div.formrow span { float: right; width: 20%; text-align: left; }
+    div.clearboth { clear: both }
+
+    .card-style {
+        padding-top: 10px;
+    }
+}
