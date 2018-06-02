@@ -4,6 +4,7 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "launch": "ng serve --port 9001 & ./combine.sh",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",

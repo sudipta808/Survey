@@ -5,6 +5,7 @@ import { ForgotPasswordComponent } from 'app/login/forgot-password/forgot-passwo
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { dashboardRoutes } from 'app/app-routing/dashboard-routing';
 import { loginRoutes } from 'app/app-routing/login-routing';
+import { AuthGuard } from 'app/common/guard/authGuard/auth-guard.service';
 
 const forgotPasswordRoute: Route = {
   path: 'forgotPassword',
@@ -19,17 +20,21 @@ const routes: Routes = [
   },
   ...loginRoutes,
   forgotPasswordRoute,
-  ...dashboardRoutes
+  ...dashboardRoutes,
+  { path: '**', redirectTo: 'login/signin' }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, 
-      { 
+    RouterModule.forRoot(routes,
+      {
         useHash: true,
-        enableTracing: true 
+        enableTracing: true
       },
     )
+  ],
+  providers: [
+    AuthGuard
   ],
   exports: [
     RouterModule

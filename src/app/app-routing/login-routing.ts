@@ -1,8 +1,8 @@
-import { Routes } from "@angular/router";
-import { LoginComponent } from "app/login/login.component";
-import { Component } from "@angular/core/src/metadata/directives";
-import { SigininComponent } from "app/login/signin/signin.component";
-import { SignupComponent } from "app/login/signup/signup.component";
+import { Routes } from '@angular/router';
+import { LoginComponent } from 'app/login/login.component';
+import { Component } from '@angular/core/src/metadata/directives';
+import { SigininComponent } from 'app/login/signin/signin.component';
+import { SignupComponent } from 'app/login/signup/signup.component';
 
 export const loginRoutes: Routes = [
     {

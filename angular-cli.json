@@ -27,6 +27,20 @@
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
+    },
+    {
+      "root": "src2",
+      "outDir": "www",
+      "assets": [
+        "./src2/src/assets"
+      ],
+      "index": "./src2/src/index.html",
+      "main": "./src2/src/app/main.ts",
+      "polyfills": "",
+      "test": "",
+      "tsconfig": "./src2/ionic.config.json",
+      "prefix": "app",
+      "scripts": []
     }
   ],
   "e2e": {

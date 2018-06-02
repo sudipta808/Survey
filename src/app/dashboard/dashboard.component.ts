@@ -8,18 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   private differentComponentArray: Array<any> = [
-    { itemName: "Redux Application", isChecked: true },
-    { itemName: "Chat Bot with overflow screen", isChecked: false },
-    { itemName: "Chat window like web tab", isChecked: false },
-    { itemName: "SEO integration", isChecked: false },
-    { itemName: "Custom controller in formGroup", isChecked: false }
+    { itemName: 'Redux Application', isChecked: true },
+    { itemName: 'Chat Bot with overflow screen', isChecked: false },
+    { itemName: 'Chat window like web tab', isChecked: false },
+    { itemName: 'SEO integration', isChecked: false },
+    { itemName: 'Custom controller in formGroup', isChecked: false }
   ];
 
   private cardDataSource: Array<string> = [];
+  private url = 'http://localhost:8002';
 
   constructor() { }
 
   ngOnInit() {
+    const rootTag: any =  document.getElementsByTagName('app-dashboard');
+    if (rootTag.length) {
+      rootTag[0].style.width = '100%';
+    }
     this.differentComponentArray.forEach((item: any) => {
       this.drawCards(item);
     });
@@ -35,7 +40,7 @@ export class DashboardComponent implements OnInit {
       this.cardDataSource.push(item);
     } else {
       const index: number = this.cardDataSource.indexOf(item);
-      if(index != -1) {
+      if(index !== -1) {
         this.cardDataSource.splice(index, 1);
       }
     }

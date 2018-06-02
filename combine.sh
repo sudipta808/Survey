@@ -1,0 +1,3 @@
+echo ionic server about to start......
+cd ./src2
+exec ionic serve -p 8002 --no-open --no-livereload

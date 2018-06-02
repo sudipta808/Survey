@@ -8,6 +8,7 @@ import { SurveyComponent } from 'app/survey/survey.component';
 import { AnalyticsComponent } from 'app/analytics/analytics.component';
 import { ContactComponent } from 'app/contact/contact.component';
 import { BtCardComponent } from 'app/common/card-component/card.component';
+import { SafePipe } from 'app/common/pipe/common.pipe';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { BtCardComponent } from 'app/common/card-component/card.component';
     SurveyComponent,
     AnalyticsComponent,
     ContactComponent,
-    BtCardComponent
+    BtCardComponent,
+    SafePipe
   ]
 })
 export class DashboardModule { }
